@@ -1,6 +1,5 @@
 /** @format */
 
-import Image from "next/image";
 import TransaksiApp from "./transaksi-app";
 
 export default function Home() {
@@ -9,14 +8,6 @@ export default function Home() {
       <h1 className="text-3xl font-bold">QRIS History Payment</h1>
 
       <TransaksiApp />
-
-      <Image
-        src="/oke.jpg"
-        alt="Logo"
-        width={400}
-        height={100}
-        className="self-center rounded-2xl"
-      />
     </div>
   );
 }

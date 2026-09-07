@@ -130,3 +130,16 @@
     @apply font-sans;
   }
 }
+
+.halftone-pattern {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.5) 1px, transparent 1px);
+  background-size: 8px 8px;
+}
+
+.bubble-text {
+  font-weight: 900;
+  color: #fdba74;
+  -webkit-text-stroke: 3px #7dd3fc;
+  paint-order: stroke fill;
+  letter-spacing: 0.02em;
+}
