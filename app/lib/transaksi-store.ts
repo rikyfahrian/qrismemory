@@ -40,9 +40,12 @@ function persist(data: Transaksi[]) {
   emitChange();
 }
 
-export function addTransaksi(nama: string, jumlah: number) {
+export function addTransaksi(nama: string, jumlah: number, deskripsi: string) {
   const current = getSnapshot();
-  persist([...current, { id: Date.now(), nama, jumlah, waktu: new Date().toISOString() }]);
+  persist([
+    ...current,
+    { id: Date.now(), nama, jumlah, deskripsi, waktu: new Date().toISOString() },
+  ]);
 }
 
 export function deleteTransaksi(id: number) {

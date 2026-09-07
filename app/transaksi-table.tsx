@@ -29,8 +29,9 @@ export function TransaksiTable({ data, total, onDelete }: Props) {
       <TableHeader>
         <TableRow>
           <TableHead>No</TableHead>
-          <TableHead>Nama</TableHead>
           <TableHead>Jam</TableHead>
+          <TableHead>Nama</TableHead>
+          <TableHead>Item</TableHead>
           <TableHead>Jumlah</TableHead>
           <TableHead className="w-10" />
         </TableRow>
@@ -39,13 +40,14 @@ export function TransaksiTable({ data, total, onDelete }: Props) {
         {data.map((item, idx) => (
           <TableRow key={item.id}>
             <TableCell>{idx + 1}</TableCell>
-            <TableCell>{item.nama}</TableCell>
             <TableCell>
               {new Date(item.waktu).toLocaleTimeString("id-ID", {
                 hour: "2-digit",
                 minute: "2-digit",
               })}
             </TableCell>
+            <TableCell>{item.nama}</TableCell>
+            <TableCell>{item.deskripsi}</TableCell>
 
             <TableCell>{formatRupiah(item.jumlah)}</TableCell>
             <TableCell>
@@ -58,8 +60,8 @@ export function TransaksiTable({ data, total, onDelete }: Props) {
       </TableBody>
       <TableFooter>
         <TableRow>
-          <TableCell colSpan={3}>Total</TableCell>
-          <TableCell colSpan={3}>{formatRupiah(total)}</TableCell>
+          <TableCell colSpan={4}>Total</TableCell>
+          <TableCell colSpan={4}>{formatRupiah(total)}</TableCell>
         </TableRow>
       </TableFooter>
     </Table>
