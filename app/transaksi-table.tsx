@@ -41,8 +41,8 @@ export function TransaksiTable({ data, total, onDelete }: Props) {
           <TableRow key={item.id}>
             <TableCell>{idx + 1}</TableCell>
             <TableCell>{new Date(item.waktu).toLocaleString("id-ID")}</TableCell>
-            <TableCell>{item.nama}</TableCell>
-            <TableCell>{item.deskripsi}</TableCell>
+            <TableCell>{item.nama.toUpperCase()}</TableCell>
+            <TableCell>{item.deskripsi.toUpperCase()}</TableCell>
 
             <TableCell>{formatRupiah(item.jumlah)}</TableCell>
             <TableCell>
